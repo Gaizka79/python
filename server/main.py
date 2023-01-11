@@ -1,8 +1,13 @@
 # uvicorn main:app --reload
 
+import os
+from dotenv import load_dotenv
+
 from fastapi import FastAPI
 from routers import products, users, basic_auth_users, jwt_auth_users
 from fastapi.staticfiles import StaticFiles
+
+load_dotenv()
 
 app = FastAPI()
 
