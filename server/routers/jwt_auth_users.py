@@ -35,14 +35,14 @@ users_db = {
         "full_name": "Gaizka Arrondo",
         "email": "gaizka@mail.com",
         "disabled": False,
-        "password": "$2a$12$rblNkTFhdoyPA.b/C6AlAeo8tpqy4WV3.Asc54FKhoo0UJNxQ3qPi"
+        "password": "$2a$12$rblNkTFhdoyPA.b/C6AlAeo8tpqy4WV3.Asc54FKhoo0UJNxQ3qPi"  #123456
     },
     "Adele": {
         "username": "Adele",
         "full_name": "Adele Arrondo",
         "email": "Adele@mail.com",
         "disabled": False,
-        "password": "$2a$12$E/WBrN8AFR0iq1fEAPKhqeuWLRNBXuCNB.aKwcM3ra894OpsoQv6e"
+        "password": "$2a$12$E/WBrN8AFR0iq1fEAPKhqeuWLRNBXuCNB.aKwcM3ra894OpsoQv6e"  #654321
     }
 }
 
