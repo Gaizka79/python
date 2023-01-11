@@ -9,12 +9,10 @@ from passlib.context import CryptContext
 from datetime import datetime, timedelta
 
 load_dotenv()
-
 ALGORITHM =os.getenv('ALGORITHM')
 ACCESS_TOKEN_EXPIRES =os.getenv('ACCESS_TOKEN_EXPIRES')
 SECRET = os.getenv('SECRET')
 
-print(ALGORITHM + ACCESS_TOKEN_EXPIRES + SECRET)
 router = APIRouter()
 
 oauth2 = OAuth2PasswordBearer(tokenUrl="login")
