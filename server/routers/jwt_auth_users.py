@@ -1,3 +1,6 @@
+import os
+from dotenv import load_dotenv
+
 from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
@@ -5,17 +8,18 @@ from jose import jwt, JWTError
 from passlib.context import CryptContext
 from datetime import datetime, timedelta
 
-ALGORITHM ="HS256"
-ACCESS_TOKEN_EXPIRES = 1
-SECRET = "2338abcafbde27ab3bd59bd35e9c928da5cb3f3b742bd04c50d452831e195808" #openssl rand -hex 32
+load_dotenv()
 
+ALGORITHM =os.getenv('ALGORITHM')
+ACCESS_TOKEN_EXPIRES =os.getenv('ACCESS_TOKEN_EXPIRES')
+SECRET = os.getenv('SECRET')
 
+print(ALGORITHM + ACCESS_TOKEN_EXPIRES + SECRET)
 router = APIRouter()
 
 oauth2 = OAuth2PasswordBearer(tokenUrl="login")
 
 crypt = CryptContext(schemes=["bcrypt"])
-
 
 
 class User(BaseModel):
@@ -88,8 +92,8 @@ async def login(form: OAuth2PasswordRequestForm = Depends()):
             detail="El usuario no es correcto")
 
     user = search_user_db(form.username)
-    print(user)
-
+    #print(user)
+    
     if not crypt.verify(form.password, user.password):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST, 
@@ -97,7 +101,7 @@ async def login(form: OAuth2PasswordRequestForm = Depends()):
 
     access_token = {
         "sub": user.username, 
-        "exp": datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRES)
+        "exp": datetime.utcnow() + timedelta(minutes=int(ACCESS_TOKEN_EXPIRES))
     }
 
     return {
