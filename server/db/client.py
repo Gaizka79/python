@@ -5,11 +5,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 MONGO_DB_NAME = os.getenv('MONGO_DB_NAME')
+
 #db_client = MongoClient(os.getenv('MONGO_URI'), serverSelectionTimeoutMS=5000).MONGO_DB_NAME
 try:
     db_client = pymongo.MongoClient(
         os.getenv('MONGO_URI'), 
-        serverSelectionTimeoutMS=5000).MONGO_DB_NAME
+        serverSelectionTimeoutMS=5000).pythondb
     print("INFO:\t  Mongo DB konektatua OK.....")
 except Exception:
     print("BAD NEWS:\t Unable to connect to the server.")
