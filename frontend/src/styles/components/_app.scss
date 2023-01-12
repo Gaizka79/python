@@ -1,0 +1,48 @@
+.App { text-align: center }
+  
+.App-logo {
+  //height: 40vmin;
+  height: 20vh;
+  pointer-events: none;
+  @media (max-width: 700px) {
+    height: 15vh;
+  }
+  @media (max-width: 400px) {
+    height: 10vh;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo { animation: App-logo-spin infinite 2s linear }
+  .reverse { animation: reverse-spin infinite 2s linear }
+}
+
+.button {
+  @include button;
+  margin: 0.5em 1em 0.5em 1em;
+}
+
+.App-header {
+  background-color: $color-secondary;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  overflow: hidden;
+}
+
+.App-link { color: $color-link }
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+}
+
+@keyframes reverse-spin {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(-360deg) }
+}

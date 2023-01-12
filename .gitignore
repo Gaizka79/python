@@ -1,0 +1,40 @@
+# Editors
+.vscode/
+.idea/
+**.vscode
+**/__pycache__
+
+# Vagrant
+.vagrant/
+
+# Mac/OSX
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Source for the following rules: https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# PyBuilder
+target/
+
+# pyenv
+.python-version
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
