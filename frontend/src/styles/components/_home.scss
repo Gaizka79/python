@@ -1,0 +1,10 @@
+.home {
+    color: white;
+    background-color: $color-primary;
+
+    min-height: 100vh;
+};
+
+.container {
+    @include container;
+}
