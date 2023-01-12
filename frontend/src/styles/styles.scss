@@ -1,0 +1,27 @@
+@import './utils/variables.scss';
+@import './utils/mixins.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+};
+
+html {
+    padding-bottom: 5vh;
+    background-color: $color-primary;
+}
+
+@import './components/header';
+@import './components/nav';
+@import './components/main';
+@import './components/home';
+@import './components/user';
+@import './components/new';
+@import './components/edit';
+
+@import './components/footer';
+
+@import './components/spinner';
+
+@import './components/app';
