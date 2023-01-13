@@ -1,10 +1,11 @@
 ### Users DB API ###
 
+from typing import List
 from fastapi import APIRouter, HTTPException, status
-from db.models.user import User
-from db.schemas.user import user_schema, users_schema
+from server.db.models.user import User
+from server.db.schemas.user import user_schema, users_schema
 #from db.mongo_config import db_client
-from db.client import db_client
+from server.db.client import db_client
 from bson import ObjectId
 
 router = APIRouter(prefix="/userdb",
@@ -13,7 +14,7 @@ router = APIRouter(prefix="/userdb",
 
 users_list = []
 
-@router.get("/")#, response_model=list[User])
+@router.get("/", response_model=List[User])
 async def users():
     return users_schema(db_client.users.find())
 
@@ -27,7 +28,6 @@ async def user(id: str):
 
 @router.post("/", response_model=User, status_code=status.HTTP_201_CREATED)
 async def post_user(user: User):
-    print(User)
     if type(search_user("email", user.email)) == User:
         raise HTTPException(
             status_code=status.HTTP_406_NOT_ACCEPTABLE, detail="El usuario ya existe")
