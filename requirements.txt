@@ -4,3 +4,6 @@ passlib
 bcrypt
 pymongo
 python-multipart
+pydantic
+typing
+bson
