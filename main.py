@@ -1,7 +1,7 @@
 # uvicorn main:app --reload
 
 from fastapi import FastAPI
-from routers import products, users, basic_auth_users, jwt_auth_users, users_db
+from server.routers import products, users, basic_auth_users, jwt_auth_users, users_db
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -24,7 +24,7 @@ app.include_router(users.router)
 app.include_router(basic_auth_users.router)
 app.include_router(jwt_auth_users.router)
 app.include_router(users_db.router)
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="./server/static"), name="static")
 
 @app.get("/")
 async def root():
