@@ -71,3 +71,5 @@ pertsonala.txt
 server/main2.py
 server/__pycache__/
 .vscode
+
+.python-env

@@ -1,9 +1,13 @@
 # uvicorn main:app --reload
 
+import uvicorn
 from fastapi import FastAPI
 from server.routers import products, users, basic_auth_users, jwt_auth_users, users_db
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
+
+if __name__ == "__main__":
+  uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
 
 app = FastAPI()
 
