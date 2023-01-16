@@ -73,3 +73,5 @@ server/__pycache__/
 .vscode
 
 .python-env
+.vercel
+node_modules/
