@@ -8,3 +8,5 @@ pydantic
 typing
 bson
 python-dotenv
+uvicorn
+vercel
