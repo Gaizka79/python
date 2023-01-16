@@ -15,10 +15,10 @@ function Header () {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div className="logos">
-          <img src={mongo} alt="mongo logo" className="logo"/>
           <img src={python} alt="python logo" className="logo"/>
-          <img src={react_logo} alt="react_logo logo" className="logo"/>   
           <img src={fastApi} alt="fastApi logo" className="logo"/>    
+          <img src={react_logo} alt="react_logo logo" className="logo"/>   
+          <img src={mongo} alt="mongo logo" className="logo"/>
           
         </div>
         <img src={logo} className="App-logo reverse" alt="logo" />

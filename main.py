@@ -17,7 +17,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 # Routers
 app.include_router(products.router)
 app.include_router(users.router)
@@ -28,7 +27,7 @@ app.mount("/static", StaticFiles(directory="./server/static"), name="static")
 
 @app.get("/")
 async def root():
-    return {"Hello": "World"}
+    return {"Kaixo": "World"}
 
 @app.get("/kaixo/")
 async def kaixo():
