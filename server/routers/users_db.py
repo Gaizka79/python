@@ -6,7 +6,7 @@ from server.db.models.user import User
 from server.db.schemas.user import user_schema, users_schema
 #from db.mongo_config import db_client
 from server.db.client import db_client
-from bson import ObjectId
+from bson.objectid import ObjectId
 
 router = APIRouter(prefix="/userdb",
                     tags=["userdb"],

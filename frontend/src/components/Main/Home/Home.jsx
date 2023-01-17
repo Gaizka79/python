@@ -20,7 +20,7 @@ function Home () {
     }
     console.log(response)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[response, users]);
+  },[response]);
 
   const paintUsers = () => {
     return users.map(
