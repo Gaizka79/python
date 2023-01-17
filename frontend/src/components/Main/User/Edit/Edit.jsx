@@ -19,7 +19,7 @@ function Edit () {
 
 useEffect (() => {
   const getUser = async () => {
-    await axios.get(`/userdb/${params._id}`)
+    await axios.get(`https://backend2-q0hm.onrender.com/usersdb/${params._id}`)
       .then((res) => {
         setValues(res.data)
       })
@@ -34,7 +34,7 @@ useEffect (() => {
   const onSubmit = async () => {
     try {
       console.log(values)
-      await axios.put(`/userdb`, values)
+      await axios.put(`https://backend2-q0hm.onrender.com/usersdb/`, values)
         .then((response) => console.log(response.data))
       setMessage("Usuario editado OK");
     } catch (error) {

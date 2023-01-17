@@ -20,7 +20,7 @@ function Home () {
     }
     console.log(response)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[response]);
+  },[response, users]);
 
   const paintUsers = () => {
     return users.map(
@@ -30,8 +30,8 @@ function Home () {
 
   return (
     <div className="home container">
-      {loading ? <Spinner/>: ""}
-      {loading ? <p>"Loading..."</p> : paintUsers()}  {/* //quitamos isLoading */}
+      {loading || !response ? <Spinner/>: ""}
+      {loading || !response ? <p>"Loading..."</p> : paintUsers()}  {/* //quitamos isLoading */}
     </div>
   )
 }

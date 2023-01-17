@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 //axios.defaults.baseURL='/users';
+axios.defaults.baseURL="https://backend2-q0hm.onrender.com/usersdb"
 
-const useAxios = (url = "/userdb") => {
+//const useAxios = (url = "/userdb") => {
+const useAxios = (baseURL) => {
 
     const [ response, setResponse ] = useState(null);
     const [ error, setError ] = useState(null);
@@ -12,7 +14,7 @@ const useAxios = (url = "/userdb") => {
     useEffect(() => {
         const fetchData = async() => {
             setTimeout(async() => {
-                await axios.get(url)
+                await axios.get(baseURL)    //await axios.get(url)
                     .then((res) => setResponse(res.data))
                     .catch((err) => setError(err))
                     .finally(() => setLoading(false))
@@ -20,7 +22,7 @@ const useAxios = (url = "/userdb") => {
         };
         
         fetchData();
-    }, [url]);
+    }, [baseURL]);
     
     return { response, error, loading };
 };
