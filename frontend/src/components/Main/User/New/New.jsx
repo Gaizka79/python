@@ -18,7 +18,7 @@ function New () {
 
   const onSubmit = async () => {
     try {
-      await axios.post("/userdb", values)
+      await axios.post("https://backend2-q0hm.onrender.com/usersdb/", values)
         .then((response) => console.log(response.data))
       setMessage("Usuario creado OK");
     } catch (error) {
